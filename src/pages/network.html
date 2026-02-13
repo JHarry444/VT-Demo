@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
+    <header>
+   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">QA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./elements.html">Elements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./console.html">Console</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./sources.html">Sources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./network.html">Network</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./application.html">Application</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <main>
+        <h1>Network</h1>
+        <section>
+            <p>Use F12 or RMB > inspect and open the <b>Network</b> tab.</p>
+            <p>In this tab we can see a recording of all the requests that have been made by this page.</p>
+        </section>
+        <section>
+            <h2>Pictures</h2>
+            <p>First picture loads correctly and can be seen in the <b>Network</b> tab as a successful (200) request
+                whereas the second has a malform URL</p>
+            <img src="https://avatars.githubusercontent.com/u/41322826?v=4" alt="Pic of me">
+            <img src="https://avatars.githubusercontent.com/uf/41322826?v=4" alt="Pic that doesn't load">
+        </section>
+        <section>
+            <h2>CRUD</h2>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col">
+                        <h3>GET</h3>
+                        <div id="trainers" class="card-deck">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3>POST</h3>
+                        <div>
+                            <form id="trainerForm">
+                                <label for="trainerName">Name</label>
+                                <input type="text" name="name" id="trainerName" class="form-control">
+                                <label for="trainerAge">Age</label>
+                                <input type="number" name="age" id="trainerAge" class="form-control">
+                                <label for="trainerSpecialism">Specialism</label>
+                                <input type="text" name="specialism" id="trainerSpecialism" class="form-control">
+                                <button class="btn btn-primary" type="submit">ADD</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col">
+                        <h3>UPDATE</h3>
+                        <form id="trainerUpdate">
+
+                        </form>
+                    </div>
+                    <div class="col">
+                        <h3>DELETE</h3>
+                        <form id="trainerDelete">
+                            <label for="deleteID">ID</label>
+                            <input type="text" name="id" id="deleteID" class="form-control">
+                            <button class="btn btn-primary">REMOVE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./network.js"></script>
+</body>
+
+</html>

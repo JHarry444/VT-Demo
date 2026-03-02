@@ -43,8 +43,8 @@
         });
     }
     const trainerForm = $("#trainerForm")[0];
-    trainerForm.addEventListener("submit", function (e) {
-        e.preventDefault();
+    trainerForm.addEventListener("submit", function (event) {
+        event.preventDefault();
         const data = { name: this.trainerName.value, age: this.trainerAge.value, specialism: this.trainerSpecialism.value }
         $
             .ajax({ url: TRAINER_URL, method: "POST", context: trainerForm, contentType: "application/json", data: JSON.stringify(data), dataType: "json" })

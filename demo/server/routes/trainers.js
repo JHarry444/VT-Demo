@@ -13,14 +13,18 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  if (!res.body) return next({ msg: "NO DATA", status: 400 });
-  const { name, age, specialism } = res.body;
-  if (!name) return next({ msg: "Name must not be blank", status: 400 });
-  if (!age) return next({ msg: "Name must not be blank", status: 400 });
-  if (!specialism) return next({ msg: "Name must not be blank", status: 400 });
+  try {
+    if (!req.body) return next({ msg: "NO DATA", status: 400 });
+    const { name, age, specialism } = req.body;
+    if (!name) return next({ msg: "Name must not be blank", status: 400 });
+    if (!age) return next({ msg: "Name must not be blank", status: 400 });
+    if (!specialism) return next({ msg: "Name must not be blank", status: 400 });
 
-  const trainer = await Trainer.create(req.body);
-  res.json(trainer);
+    const trainer = await Trainer.create(req.body);
+    res.json(trainer);
+  } catch (error) {
+    res.status(500).json({ message: 'Error creating trainer', error: error.message });
+  }
 });
 
 router.put('/:id', async (req, res) => {

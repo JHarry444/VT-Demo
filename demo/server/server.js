@@ -1,17 +1,24 @@
 const express = require("express");
 const cors = require("cors");
-
+const bodyParser = require("body-parser");
 const app = express();
 
 
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: 'http://127.0.0.1:5500',
+  credentials: true, 
+  optionsSuccessStatus: 200 
+}));
+app.use(bodyParser.json());
 
 
 
 app.get("/", (req, res) => {
     res.send("Hello, World!");
 });
+
+const authRouter = require("./routes/auth");
+app.use("/auth", authRouter);
 
 const trainerRouter = require("./routes/trainers");
 

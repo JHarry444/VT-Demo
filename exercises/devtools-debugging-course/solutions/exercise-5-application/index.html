@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools Debugging Course - Exercise 5</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">DevTools Debugging Course - Exercise 5</h1>
+        <p>This exercise focuses on using the Application tab in DevTools to inspect local storage and session storage.</p>
+        
+        <div class="form-group">
+            <label for="inputData">Enter some data to store:</label>
+            <input type="text" class="form-control" id="inputData" placeholder="Type something...">
+        </div>
+        <button id="saveButton" class="btn btn-primary">Save to Local Storage</button>
+        <button id="loadButton" class="btn btn-secondary">Load from Local Storage</button>
+        
+        <h2 class="mt-5">Stored Data:</h2>
+        <pre id="storedData" class="bg-light p-3"></pre>
+    </div>
+
+    <script src="../../assets/js/utils.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

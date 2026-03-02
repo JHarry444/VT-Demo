@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Debugging Exercise</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        function logMessage() {
+            console.log("This is a message from the logMessage function.");
+            alert("Check the console for the logged message!");
+        }
+
+        function calculateSum(a, b) {
+            return a + b;
+        }
+
+        $(document).ready(function() {
+            $('#logButton').click(function() {
+                logMessage();
+                const sum = calculateSum(5, 10);
+                console.log("The sum of 5 and 10 is: " + sum);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Console Debugging Exercise</h1>
+        <p>Click the button below to log messages to the console.</p>
+        <button id="logButton" class="btn btn-primary">Log Message</button>
+    </div>
+</body>
+</html>

@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5000', 'http://127.0.0.1:5500', 'http://localhost:3000'],
+  origin: ['http://localhost:5000', 'http://127.0.0.1:5500', 'http://localhost:3000', "https://jharry444.github.io/VT-Project/"],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
